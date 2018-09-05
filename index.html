@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		body{
+			background-color: #cdcdcd;
+		}
+		header{
+			width: 100%;
+			height: 50px;
+			background-color: #323232;
+		}
+		header .box{
+			width: 600px;
+			height: 100%;
+			
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		header .box h2{
+			display: block;
+			width: 100px;
+			height: 100%;
+			color: #ddd;
+			font-size: 24px;
+			line-height: 50px;
+		}
+		header .box input{
+			width: 360px;
+			height: 26px;
+			border-radius: 10px;
+			text-indent: 1em;
+			border: 0;
+			outline: none;
+		}
+		.section1{
+			width: 600px;
+			height: auto;
+			
+			margin: 0 auto;
+		}
+		.section1 .b1{
+			width: 100%;
+			height: auto;
+			overflow: hidden;
+		}
+		.section1 .b1 .h3{
+			display: block;
+			width: 100%;
+			height: 31px;
+			margin: 20px auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			
+		}
+		.section1 .b1 .prev{
+			width: 100%;
+			height: auto;
+		}
+		.section1 .b1 .h3 h3{
+			font-size: 1.5em;
+			color: #000;
+			line-height: 31px;
+		}
+		.section1 .b1 .h3 p{
+			width: 18px;
+			height: 20px;
+			border-radius: 20px;
+			background-color: #E6E6FA;
+			color: #666;
+			font-size: 14px;
+			text-align: center;
+			line-height: 20px;
+			font-weight: bold;
+		}
+		.section1 .b1 .prev .b11{
+			width: 100%;
+			height: 32px;
+			display: flex;
+			justify-content: space-between;
+			margin-top: 10px;
+			
+			background-color: yellow;
+		}
+		.section1 .b1 .prev .b11 .x1{
+			width: 5px;
+			height: 100%;
+			float: left;
+			background-color: #629A9C;
+		}
+		.section1 .b1 .prev .b11 .y1{
+			width: 595px;
+			height: 100%;
+			background-color: #fff;
+			float: right;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			box-sizing: border-box;
+			padding-right: 10px;
+			padding-left: 10px;
+		}
+		.section1 .b1 .prev .b11 .y1 .input2{
+			width: 22px;
+			height: 22px;
+
+		}
+		.section1 .b1 .prev .b11 .y1 p{
+			width: 505px;
+			height: 100%;
+			line-height: 32px;
+
+		} 
+		.section1 .b1 .prev .b11 .y1 .y11{
+			width: 26px;
+			height: 24px;
+			background: url("img/tu1.png") no-repeat center;
+			background-size: 100% 100%;
+		}
+
+		.section1 .b2{
+			width: 100%;
+			height: auto;
+			overflow: hidden;
+		}
+		.section1 .b2 .h3{
+			display: block;
+			width: 100%;
+			height: 31px;
+			margin: 20px auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			
+		}
+		.section1 .b2 .h3 h3{
+			font-size: 1.5em;
+			color: #000;
+			line-height: 31px;
+		}
+		.section1 .b2 .h3 p{
+			width: 18px;
+			height: 20px;
+			border-radius: 20px;
+			background-color: #E6E6FA;
+			color: #666;
+			font-size: 14px;
+			text-align: center;
+			line-height: 20px;
+			font-weight: bold;
+		}
+		.section1 .b2 .b11{
+			width: 100%;
+			height: 32px;
+			display: flex;
+			justify-content: space-between;
+			margin-top: 10px;
+			
+			background-color: yellow;
+		}
+		.section1 .b2 .b11 .x1{
+			width: 5px;
+			height: 100%;
+			float: left;
+			background-color: #B3B3B3;
+		}
+		.section1 .b2 .b11 .y1{
+			width: 595px;
+			height: 100%;
+			background-color: #E6E6E6;
+			float: right;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			box-sizing: border-box;
+			padding-right: 10px;
+			padding-left: 10px;
+		}
+		.section1 .b2 .b11 .y1 .input2{
+			width: 22px;
+			height: 22px;
+
+		}
+		.section1 .b2 .b11 .y1 p{
+			width: 505px;
+			height: 100%;
+			line-height: 32px;
+			color: #676767;
+
+		} 
+		.section1 .b2 .b11 .y1 .y11{
+			width: 26px;
+			height: 24px;
+			background: url("img/tu2.png") no-repeat center;
+			background-size: 100% 100%;
+		}
+	</style>
+<body>
+	<header>
+		<div class="box">
+			<h2>ToDoList</h2>
+			<input type="text" id="input1" placeholder="添加ToDo">
+		</div>
+	</header>
+	<section class="section1">
+		<div class="b1">
+			<div class="h3">
+				<h3>正在进行</h3>
+				<p id="p1">0</p>
+			</div>
+			<div class="prev">
+				
+			</div>
+		<!-- <div class="b11">
+				<div class="x1"></div>
+				<div class="y1">
+					<input type="checkbox">
+					<p>515151axaaa</p>
+					<div class="y11"></div>
+				</div>
+			</div> -->
+			<!-- <div class="b11">
+				<div class="x1"></div>
+				<div class="y1">
+					<input type="checkbox">
+					<p>515151axaaa</p>
+					<div class="y11"></div>
+				</div>
+			</div>
+			<div class="b11">
+				<div class="x1"></div>
+				<div class="y1">
+					<input type="checkbox">
+					<p>515151axaaa</p>
+					<div class="y11"></div>
+				</div>
+			</div>
+			<div class="b11">
+				<div class="x1"></div>
+				<div class="y1">
+					<input type="checkbox">
+					<p>515151axaaa</p>
+					<div class="y11"></div>
+				</div>
+			</div> -->
+		</div>
+		<div class="b2">
+			<div class="h3">
+				<h3>已经完成</h3>
+				<p id="p2">0</p>
+			</div>
+			<div class="next"></div>
+			<!-- <div class="b11">
+				<div class="x1"></div>
+				<div class="y1">
+					<input type="checkbox" checked>
+					<p>515151axaaa</p>
+					<div class="y11"></div>
+				</div>
+			</div>
+			<div class="b11">
+				<div class="x1"></div>
+				<div class="y1">
+					<input type="checkbox" checked>
+					<p>515151axaaa</p>
+					<div class="y11"></div>
+				</div>
+			</div>
+			<div class="b11">
+				<div class="x1"></div>
+				<div class="y1">
+					<input type="checkbox" checked>
+					<p>515151axaaa</p>
+					<div class="y11"></div>
+				</div>
+			</div>
+			<div class="b11">
+				<div class="x1"></div>
+				<div class="y1">
+					<input type="checkbox" checked>
+					<p>515151axaaa</p>
+					<div class="y11"></div>
+				</div>
+			</div> -->
+		</div>
+	</section>
+</body>
+	<script>
+		let arr1=["hahah","xixixi","heiheiehi","wagaga"];
+		let arr2=["huhu","yayaya","heaaaa"];
+		arr1 = localStorage.arr1?localStorage.arr1.split(","):[]
+		arr2 = localStorage.arr2?localStorage.arr2.split(","):[]
+		let prev=document.querySelector(".prev");
+		let next=document.querySelector(".next");
+		let input1=document.querySelector("#input1");
+		
+		
+		function update(){
+			localStorage.arr1 = arr1.join(",")
+			localStorage.arr2 = arr2.join(",")
+			prev.innerHTML="";
+			next.innerHTML="";
+			p1.innerText=arr1.length;
+			p2.innerText=arr2.length;
+			arr1.forEach(function(item,index){
+
+				let b11=document.createElement("div");
+				
+				b11.className="b11";
+				/*let str=`<div class="x1"></div>
+					<div class="y1">
+						<input type="checkbox" class="input2">
+						<p class="p3">${item}</p>
+						<div class="y11" id="tu1"></div>
+					</div>`;
+				b11.innerHTML=str;*/
+
+				let x1=document.createElement("div");
+				x1.className="x1";
+				let y1=document.createElement("div");
+				y1.className="y1";
+				let input5=document.createElement("input");
+				input5.className="input2";
+				input5.setAttribute("type","checkbox");
+				let p5=document.createElement("p");
+				p5.className="p3";
+				p5.innerHTML=item;
+				let y11=document.createElement("div");
+				y11.className="y11";
+				y1.appendChild(input5);
+				y1.appendChild(p5);
+				y1.appendChild(y11);
+				b11.appendChild(x1);
+				b11.appendChild(y1);
+				prev.appendChild(b11);
+
+				input5.onclick=function(){
+
+					arr2.push(arr1[index]);
+					arr1.splice(index,1);
+
+
+					update();
+					
+				}
+				y11.onclick=function(){
+					arr1.splice(index,1);
+					update();
+				}
+				p5.ondblclick=function(){
+					let input=document.createElement("input");
+					input.setAttribute("type","text");
+					input.value=p5.innerText;
+					p5.innerText="";
+
+					p5.appendChild(input);	
+					input.focus();
+					input.onblur=function(){
+						/*item5.innerText=input.value;*/
+						arr1.splice(index,1,input.value);
+						update();
+
+
+
+
+					}
+
+				}
+
+
+				
+
+			})
+			arr2.forEach(function(item,index){
+				let b12=document.createElement("div");
+				b12.className="b11";
+				/*let str1=`<div class="x1"></div>
+					<div class="y1">
+						<input type="checkbox" checked class="input3">
+						<p class="p4">${item}</p>
+						<div class="y11" id="tu2"></div>
+					</div>`;
+				b12.innerHTML=str1;*/
+				let x1=document.createElement("div");
+				x1.className="x1";
+				let y1=document.createElement("div");
+				y1.className="y1";
+				let input5=document.createElement("input");
+				input5.className="input2";
+				input5.setAttribute("type","checkbox");
+				input5.setAttribute("checked","checked");
+				let p5=document.createElement("p");
+				p5.className="p3";
+				p5.innerHTML=item;
+				let y11=document.createElement("div");
+				y11.className="y11";
+				y1.appendChild(input5);
+				y1.appendChild(p5);
+				y1.appendChild(y11);
+				b12.appendChild(x1);
+				b12.appendChild(y1);
+				next.appendChild(b12);
+
+				input5.onclick=function(){
+
+					arr1.push(arr2[index]);
+					arr2.splice(index,1);
+
+
+					update();
+					
+				}
+				y11.onclick=function(){
+					arr2.splice(index,1);
+					update();
+				}
+				p5.ondblclick=function(){
+					let input=document.createElement("input");
+					input.setAttribute("type","text");
+					input.value=p5.innerText;
+					p5.innerText="";
+
+					p5.appendChild(input);	
+					input.focus();
+					input.onblur=function(){
+						/*item5.innerText=input.value;*/
+						arr2.splice(index,1,input.value);
+						update();
+
+
+
+
+					}
+
+				}
+
+				
+			})
+
+
+
+
+		}
+		update();
+		
+			
+			
+			
+	
+		
+		input1.onkeydown=function(e){
+			
+			if(e.keyCode==13 && this.value!=""){
+				arr1.push(this.value);
+				update();
+				this.value="";
+			}
+		}
+	
+
+		
+
+			
+		
+
+
+		
+		
+		
+		
+		
+		
+	</script>
+</html>
